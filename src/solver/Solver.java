@@ -1,5 +1,6 @@
 package solver;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -18,26 +19,23 @@ public class Solver {
 	}
 
 	public void solve() {
-		System.out.println("Starting to solve: " + cube);
+		System.out.println("Starting to solve: \n" + cube);
 		CubeEvaluator eval = new CubeEvaluator();
 
 		int numMoves = 0;
-		double percentSolved = 0.0;
-		while (eval.facesSolved(cube) < 2) {
-			Move move = pickRandomMove();
+		TreeNode path = new TreeNode(cube, moves.get(0), moves, null);
+		long startTime = System.currentTimeMillis();
+		while (eval.facesSolved(cube) < 4) {
+			Move move = path.getMove();
 			move.execute(cube);
 			numMoves++;
-			if (percentSolved > eval.percentSolved(cube)) {
-				move.getInverse().execute(cube);
-			}
 
+			path = path.getNext();
 		}
-		System.out.println("Solved after " + numMoves + " moves");
+		long elapsed = System.currentTimeMillis() - startTime;
+		System.out.println("Solved after " + numMoves + " tries. Elapsed time: " + (elapsed / 1000) + " sec");
+		System.out.println(path);
 		System.out.println(cube);
-	}
-
-	private Move pickRandomMove() {
-		return moves.get(new Random().nextInt(moves.size()));
 	}
 
 }

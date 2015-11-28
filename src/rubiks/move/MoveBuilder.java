@@ -27,6 +27,11 @@ public class MoveBuilder {
 			public void execute(Cube cube) {
 				moveTopOrBottomCW(cube, 0, cube.getTop());
 			}
+			
+			@Override
+			public String toString() {
+				return "Top CW";
+			}
 		};
 
 		Move topCCW = new TopOrBottomMove() {
@@ -36,6 +41,11 @@ public class MoveBuilder {
 				moveTopOrBottomCW(cube, 0, cube.getTop());
 				moveTopOrBottomCW(cube, 0, cube.getTop());
 				moveTopOrBottomCW(cube, 0, cube.getTop());
+			}
+			
+			@Override
+			public String toString() {
+				return "Top CCW";
 			}
 		};
 
@@ -53,6 +63,11 @@ public class MoveBuilder {
 			public void execute(Cube cube) {
 				moveTopOrBottomCW(cube, 2, cube.getBottom());
 			}
+			
+			@Override
+			public String toString() {
+				return "Bottom CW";
+			}
 		};
 
 		Move bottomCCW = new TopOrBottomMove() {
@@ -62,6 +77,11 @@ public class MoveBuilder {
 				moveTopOrBottomCW(cube, 2, cube.getBottom());
 				moveTopOrBottomCW(cube, 2, cube.getBottom());
 				moveTopOrBottomCW(cube, 2, cube.getBottom());
+			}
+			
+			@Override
+			public String toString() {
+				return "Bottom CCW";
 			}
 		};
 
@@ -79,6 +99,11 @@ public class MoveBuilder {
 			public void execute(Cube cube) {
 				moveLeftOrRightCW(cube, 0, cube.getLeft());
 			}
+			
+			@Override
+			public String toString() {
+				return "Left CW";
+			}
 		};
 
 		Move leftCCW = new LeftOrRightMove() {
@@ -88,6 +113,11 @@ public class MoveBuilder {
 				moveLeftOrRightCW(cube, 0, cube.getLeft());
 				moveLeftOrRightCW(cube, 0, cube.getLeft());
 				moveLeftOrRightCW(cube, 0, cube.getLeft());
+			}
+			
+			@Override
+			public String toString() {
+				return "Left CCW";
 			}
 		};
 
@@ -105,6 +135,11 @@ public class MoveBuilder {
 			public void execute(Cube cube) {
 				moveLeftOrRightCW(cube, 2, cube.getRight());
 			}
+			
+			@Override
+			public String toString() {
+				return "Right CW";
+			}
 		};
 
 		Move rightCCW = new LeftOrRightMove() {
@@ -114,6 +149,11 @@ public class MoveBuilder {
 				moveLeftOrRightCW(cube, 2, cube.getRight());
 				moveLeftOrRightCW(cube, 2, cube.getRight());
 				moveLeftOrRightCW(cube, 2, cube.getRight());
+			}
+			
+			@Override
+			public String toString() {
+				return "Right CCW";
 			}
 		};
 
@@ -131,6 +171,11 @@ public class MoveBuilder {
 			public void execute(Cube cube) {
 				moveFrontClockwise(cube);
 			}
+			
+			@Override
+			public String toString() {
+				return "Front CW";
+			}
 		};
 
 		Move frontCCW = new FrontOrBackMove() {
@@ -140,6 +185,11 @@ public class MoveBuilder {
 				moveFrontClockwise(cube);
 				moveFrontClockwise(cube);
 				moveFrontClockwise(cube);
+			}
+			
+			@Override
+			public String toString() {
+				return "Front CCW";
 			}
 		};
 
@@ -158,6 +208,11 @@ public class MoveBuilder {
 				moveBackClockwise(cube);
 
 			}
+			
+			@Override
+			public String toString() {
+				return "Back CW";
+			}
 		};
 
 		Move backCCW = new FrontOrBackMove() {
@@ -167,6 +222,11 @@ public class MoveBuilder {
 				moveBackClockwise(cube);
 				moveBackClockwise(cube);
 				moveBackClockwise(cube);
+			}
+			
+			@Override
+			public String toString() {
+				return "Back CCW";
 			}
 		};
 

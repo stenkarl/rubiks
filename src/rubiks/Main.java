@@ -4,6 +4,7 @@ import java.util.List;
 
 import rubiks.move.Move;
 import rubiks.move.MoveBuilder;
+import solver.Solver;
 
 public class Main {
 
@@ -26,11 +27,11 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		testMoves();
+		//testMoves();
 
-		// Solver solver = new Solver(CubeBuilder.createScrambledCube());
+		Solver solver = new Solver(CubeBuilder.createScrambledCube());
 
-		// solver.solve();
+		solver.solve();
 
 	}
 
