@@ -24,13 +24,17 @@ public class TreeNode {
 		this.cube = cube;
 	}
 	
-	TreeNode getNext() {
+	TreeNode getNextDepthFirst() {
 		if (size() > MAX_DEPTH || getNextIndex() == -1) {
 			move.getInverse().execute(cube); // if we went too far, back out the move and point back to the parent's next
-			return parent.getNext();
+			return parent.getNextDepthFirst();
 		}
-		//System.out.println("next index " + index);
 		return new TreeNode(cube, moves.get(index), moves, this);
+	}
+	
+	// TODO
+	TreeNode getNextBreadthFirst() {
+		return null;
 	}
 	
 	Move getMove() {

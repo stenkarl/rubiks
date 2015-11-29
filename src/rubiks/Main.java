@@ -4,6 +4,7 @@ import java.util.List;
 
 import rubiks.move.Move;
 import rubiks.move.MoveBuilder;
+import solver.DepthFirstSolver;
 import solver.Solver;
 
 public class Main {
@@ -29,7 +30,12 @@ public class Main {
 	public static void main(String[] args) {
 		//testMoves();
 
-		Solver solver = new Solver(CubeBuilder.createScrambledCube());
+		Solver solver = new DepthFirstSolver(CubeBuilder.createScrambledCube());
+		
+		// TODO -- when the time is right...
+		// remember to comment out DepthFirstSolver
+		//Solver solver = new BreadthFirstSolver(CubeBuilder.createScrambledCube());
+
 
 		solver.solve();
 

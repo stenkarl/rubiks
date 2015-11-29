@@ -1,6 +1,11 @@
 package rubiks;
 
-import static rubiks.Tile.*;
+import static rubiks.Tile.BLUE;
+import static rubiks.Tile.GREEN;
+import static rubiks.Tile.ORANGE;
+import static rubiks.Tile.RED;
+import static rubiks.Tile.WHITE;
+import static rubiks.Tile.YELLOW;
 
 public class CubeBuilder {
 
